@@ -1,0 +1,382 @@
+/*
+filename: [RootFlowers Style] 
+author: [Ivan Liang Jin Ngu]
+created: [8/09/2025]
+last modified: [9/09/2025]
+description: [Styles for every single php files]
+*/
+
+:root {
+    --bs-primary: #ff6b87;   /* sakura pink */
+    --bs-secondary: #f8bbd0; /* pastel pink */
+    --bs-dark: #2c2c2c;      /* text */
+    --bs-light: #fff3e0;     /* peachy cream */
+}
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.bg-light {
+    background-color: #fff3e0 !important; /* peachy cream */
+}
+
+.bg-sakura-gradient {
+  background: linear-gradient(135deg, #f8bbd0, #f48fb1);
+  color: white;
+}
+
+body .navbar-brand, .btn{
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #fff8f0; /* soft cream */
+    color: var(--bs-dark);
+}
+
+h1, h2, h3 {
+    font-family: 'Merriweather', serif;
+}
+
+.navbar-brand.brand-logo-text {
+    font-family: 'Great Vibes', cursive !important;
+    font-size: 1.5rem;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* space between logo and text */
+}
+
+.navbar-logo {
+    height: 60px;      /* taller so it’s visible */
+    width: auto;       /* auto width to keep proportions */
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.navbar {
+    background-color: rgba(255, 107, 135, 0.8) !important; /* semi-transparent sakura pink */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    font-size: 1.2rem;
+}
+
+.hero {
+    height: 100vh;
+    background: url("../images/hero.jpg") no-repeat center center/cover;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.4); /* dark tint */
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1; /* sit above overlay */
+}
+
+.btn-pink {
+    background-color: #f48fb1;
+    color: white;
+}
+.btn-pink:hover {
+    background-color: #ec407a;
+    color: white;
+}
+
+.section-title {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60%;
+    height: 3px;
+    background-color: #e91e63; /* sakura pink */
+    border-radius: 2px;
+}
+
+.carousel-wrapper {
+    overflow: hidden;
+    width: 100%;
+    border: 4px solid #f8bbd0;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    position: relative;
+    background-color: #fce4ec; /* pastel pink */
+}
+
+.carousel-track {
+    display: flex;
+    animation: scroll 20s linear infinite;
+}
+
+.carousel-item-img {
+    flex: 0 0 calc(100% / 3); /* show 3 at a time */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5px;
+}
+
+.carousel-item-img img {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.carousel-item-img:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.carousel-wrapper:hover .carousel-track {
+    animation-play-state: paused;
+}
+
+footer {
+    background-color: rgba(44, 44, 44, 0.8);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    color: white;
+    padding: 40px 0;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+    text-align: left;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 220px;
+    margin: 10px;
+}
+
+.footer-section h6 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #ffe4ec;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: #ffe4ec;
+}
+
+footer p {
+    margin: 0.3rem 0;
+}
+
+/* ===== MODERNIZED Register Page Styling (READABILITY FIX) ===== */
+
+/* Keyframes for fade-in animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* UPDATED -- Reverted to the original gradient background */
+#reg_body {
+    background: linear-gradient(135deg, #f8bbd0, #f48fb1, #f06292);
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Center content area */
+.reg-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 15px;
+}
+
+/* Dark frosted glass effect for readability */
+.register-card {
+    background: rgba(10, 10, 10, 0.45); /* Darker, more opaque background for contrast */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle white border */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+    animation: fadeInUp 0.8s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+/* All text inside the card is now light for high contrast */
+.register-card h2 {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+}
+
+.register-card .form-label {
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9); /* Bright label text */
+}
+
+/* Dark, modern input field styles */
+.register-card .form-control,
+.register-card .form-select {
+    background-color: rgba(0, 0, 0, 0.25); /* Darker inputs */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Lighter border */
+    border-radius: 10px;
+    padding: 12px 14px;
+    color: #fff;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.register-card .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.register-card .form-control:focus,
+.register-card .form-select:focus {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-color: #ff6b87; /* Highlight with theme color on focus */
+    box-shadow: none;
+    color: #fff;
+}
+
+.register-card .form-select option {
+    background: #2c2c2c;
+    color: #fff;
+}
+
+/* Error messages */
+.register-card .invalid-feedback {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #fff !important;
+    background: rgba(216, 27, 96, 0.8);
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.form-control.is-invalid {
+    border-color: #d81b60;
+}
+
+/* Button styles */
+.register-card .btn-primary {
+    background: #ec407a;
+    border: none;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.register-card .btn-primary:hover {
+    background: #d81b60;
+    transform: translateY(-2px);
+}
+
+/* Link styles */
+.register-card a {
+    color: #f8bbd0; /* Lighter pink for links */
+    font-weight: 500;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.register-card a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Info column has white text with a strong shadow for readability */
+.register-info {
+    color: #fff;
+    animation: fadeInUp 0.8s ease-out forwards;
+    padding: 2rem;
+}
+
+.register-info h1 {
+    font-family: 'Merriweather', serif;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* Stronger shadow */
+}
+
+.register-info p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5); /* Stronger shadow */
+}
+
+.text-white-75 { 
+    color: rgba(255, 255, 255, 0.9) !important; 
+}
+
+.register-info-logo {
+    max-width: 100px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 991.98px) {
+    .register-info {
+        padding: 2rem 1.5rem;
+        background: rgba(0, 0, 0, 0.2); /* On mobile, add a dark overlay to ensure readability */
+        border-radius: 15px;
+    }
+}
+
+
+/* ===== Keyframes and old styles ===== */
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+@media (max-width: 576px) {
+    .brand-logo-text {
+        display: none;
+    }
+}
