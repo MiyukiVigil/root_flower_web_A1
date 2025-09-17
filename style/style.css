@@ -2,7 +2,7 @@
 filename: [RootFlowers Style] 
 author: [Ivan Liang Jin Ngu]
 created: [8/09/2025]
-last modified: [9/09/2025]
+last modified: [11/09/2025]
 description: [Styles for every single php files]
 */
 
@@ -34,12 +34,41 @@ body .navbar-brand, .btn{
 }
 
 body {
-    background-color: #fff8f0; /* soft cream */
+    background-color: #fffaf5; /* A lighter version of peachy cream */
+    color: var(--bs-dark);
+    font-family: 'Poppins', sans-serif;
+    padding-top: 90px;
+}
+
+.index-page {
+    padding-top: 0;
+}
+
+.main-menu-page {
+    padding-top: 0;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif;
     color: var(--bs-dark);
 }
 
-h1, h2, h3 {
-    font-family: 'Merriweather', serif;
+/* --- EXPLICIT THEME COLOR OVERRIDES --- */
+.text-primary {
+    color: var(--bs-primary) !important;
+}
+
+.btn-primary {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #e65f79; /* A slightly darker sakura pink */
+    border-color: #e65f79;
+    color: #fff;
 }
 
 .navbar-brand.brand-logo-text {
@@ -60,17 +89,81 @@ h1, h2, h3 {
     border-radius: 50%;
 }
 
+
 .navbar {
-    background-color: rgba(255, 107, 135, 0.8) !important; /* semi-transparent sakura pink */
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    font-size: 1.2rem;
+    background-color: rgba(255, 107, 135, 0.75) !important; /* Slightly more transparent */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    font-size: 1.05rem; /* Slightly smaller font for a cleaner look */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.85);
+    transition: color 0.3s ease, transform 0.3s ease;
+    padding: 0.5rem 1rem;
+    position: relative;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Style for the active page link */
+.nav-link.active {
+    color: #fff;
+    font-weight: 700;
+}
+
+/* Underline effect for active and hovered links */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--bs-light); /* peachy cream */
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 60%;
+}
+
+/* Disabled link styling */
+.nav-link.disabled {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* Modern Pill Button Style */
+.navbar .btn-light.rounded-pill {
+    background-color: var(--bs-light); /* peachy cream */
+    color: var(--bs-primary); /* sakura pink text */
+    font-weight: 600;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar .btn-light.rounded-pill:hover {
+    background-color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .hero {
     height: 100vh;
     background: url("../images/hero.jpg") no-repeat center center/cover;
     position: relative;
+}
+
+.index-page .hero h1 {
+    color: white;
 }
 
 .hero::before {
@@ -87,14 +180,6 @@ h1, h2, h3 {
     z-index: 1; /* sit above overlay */
 }
 
-.btn-pink {
-    background-color: #f48fb1;
-    color: white;
-}
-.btn-pink:hover {
-    background-color: #ec407a;
-    color: white;
-}
 
 .section-title {
     position: relative;
@@ -215,7 +300,6 @@ footer p {
     }
 }
 
-/* UPDATED -- Reverted to the original gradient background */
 #reg_body {
     background: linear-gradient(135deg, #f8bbd0, #f48fb1, #f06292);
     font-family: 'Poppins', sans-serif;
@@ -358,6 +442,40 @@ footer p {
     border-radius: 50%;
     border: 4px solid #fff;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.main-menu-page .hero {
+    height: auto;
+    min-height: 100vh;
+    padding: 5rem 1rem;
+    background-attachment: fixed;
+}
+
+.main-menu-page .hero::before {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.main-menu-page .hero-content h1,
+.main-menu-page .hero-content .lead {
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+}
+
+.main-menu-page .card {
+    background-color: var(--bs-light); /* Use 'peachy cream' for the card background */
+    border: 1px solid #fff; /* Add a subtle border */
+    border-radius: 15px; /* Softer rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: var(--bs-dark);
+}
+
+.main-menu-page .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.main-menu-page .card .card-title {
+    font-weight: 600;
 }
 
 @media (max-width: 991.98px) {
