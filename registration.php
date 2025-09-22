@@ -1,9 +1,16 @@
 <?php
-session_start();
-$errors  = $_SESSION['errors'] ?? [];
-$old     = $_SESSION['old'] ?? [];
-$success = $_SESSION['success'] ?? '';
-unset($_SESSION['errors'], $_SESSION['old'], $_SESSION['success']);
+    session_start();
+    $errors  = $_SESSION['errors'] ?? [];
+    $old     = $_SESSION['old'] ?? [];
+    $success = $_SESSION['success'] ?? '';
+    unset($_SESSION['errors'], $_SESSION['old'], $_SESSION['success']);
+
+    // Check if the user is already logged in by seeing if the 'user' session variable exists
+    if (isset($_SESSION['user'])) {
+        // If they are logged in, redirect them to the main menu page
+        header("Location: main_menu.php");
+        exit; // IMPORTANT: Stop the script from running further
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +28,16 @@ unset($_SESSION['errors'], $_SESSION['old'], $_SESSION['success']);
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body id="reg_body">
-    <header><?php include 'includes/navbar.inc' ?></header>
+    <header>
+            <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm py-2">
+                <div class="container">
+                    <a class="navbar-brand" href="index.php">
+                        <img src="images/logo.svg" alt="Root Flowers Logo" class="navbar-logo">
+                        <span class="brand-logo-text ms-2">Root Flowers</span>
+                    </a>
+                </div>
+            </nav>
+    </header>
 
     <div class="reg-wrapper">
         <div class="container">
