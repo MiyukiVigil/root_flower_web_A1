@@ -22,7 +22,7 @@
     </head>
     <body class="main-menu-page">
         <header>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+            <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-primary shadow">
                 <div class="container">
                     <a class="navbar-brand d-flex align-items-center" href="index.php">
                         <img src="images/logo.svg" alt="Root Flowers Logo" class="navbar-logo me-2">

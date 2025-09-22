@@ -11,7 +11,7 @@ echo <<<NAVBAR
         </button>
         <div class="collapse navbar-collapse" id="navbarRoot">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
-                <li class="nav-item"><a class="nav-link <?= (\$currentPage == 'index.php') ? 'active' : '' ?>" href="index.php">Home</a></li>
+                <li class="nav-item"><a class="nav-link <?= (\$currentPage == 'index.php') ? 'active' : '' ?>" href="main_menu.php">Home</a></li>
                 <li class="nav-item"><a class="nav-link <?= (\$currentPage == 'products.php') ? 'active' : '' ?>" href="products.php">Products</a></li>
                 <li class="nav-item"><a class="nav-link <?= (\$currentPage == 'workshops.php') ? 'active' : '' ?>" href="workshops.php">Workshops</a></li>
                 <li class="nav-item"><a class="nav-link <?= (\$currentPage == 'studentworks.php') ? 'active' : '' ?>" href="studentworks.php">Student Works</a></li>

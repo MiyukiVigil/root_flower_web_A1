@@ -2,7 +2,7 @@
 filename: [RootFlowers Style] 
 author: [Ivan Liang Jin Ngu]
 created: [8/09/2025]
-last modified: [11/09/2025]
+last modified: [22/09/2025]
 description: [Styles for every single php files]
 */
 
@@ -37,17 +37,8 @@ body {
     background-color: #fffaf5; /* A lighter version of peachy cream */
     color: var(--bs-dark);
     font-family: 'Poppins', sans-serif;
-    padding-top: 90px;
+    padding-top: 75px;
 }
-
-.index-page {
-    padding-top: 0;
-}
-
-.main-menu-page {
-    padding-top: 0;
-}
-
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Merriweather', serif;
@@ -60,8 +51,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-    background-color: var(--bs-primary);
-    border-color: var(--bs-primary);
+    background-color: var(--bs-primary) !important;
+    border-color: var(--bs-primary) !important;
     color: #fff;
 }
 
@@ -476,6 +467,71 @@ footer p {
 
 .main-menu-page .card .card-title {
     font-weight: 600;
+}
+
+body.product-page {
+    /* Fallback background color */
+    background-color: #fffaf5;
+    
+    /* A subtle, repeating floral pattern using an embedded SVG */
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23f8bbd0' fill-opacity='0.15' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.product-page h1{
+    color: #fff;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    border-bottom: 3px solid var(--bs-secondary); /* Pastel pink underline */
+    padding-bottom: 10px;
+    margin-bottom: 2rem;
+}
+
+.section-title::after {
+    /* We can disable the old ::after pseudo-element if it exists */
+    display: none;
+}
+
+.product-card {
+    background-color: var(--bs-light); /* <-- ADD THIS LINE */
+    border: 1px solid #eee;
+    border-top: 4px solid var(--bs-secondary); /* Pastel pink top border */
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    border-color: var(--bs-primary); /* Border turns sakura pink on hover */
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.product-card .card-img-top {
+    aspect-ratio: 4 / 3; /* Ensures all images are the same size */
+    object-fit: cover;
+}
+
+.page-header {
+    position: relative;
+}
+
+/* 2. This stretches the overlay to perfectly fit the frame */
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0; /* Stretches to the bottom */
+    left: 0;
+    right: 0;  /* Stretches to the right */
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.page-header .hero-content h1,
+.page-header .hero-content p {
+    position: relative; /* Ensures text is on top of the overlay */
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 @media (max-width: 991.98px) {

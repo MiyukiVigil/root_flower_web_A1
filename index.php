@@ -15,11 +15,11 @@
     </head>
     <body class="index-page">
         <header>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+            <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm py-2">
                 <div class="container">
-                    <a class="navbar-brand d-flex align-items-center" href="index.php">
-                        <img src="images/logo.svg" alt="Root Flowers Logo" class="navbar-logo me-2">
-                        <span class="brand-logo-text">Root Flowers</span>
+                    <a class="navbar-brand" href="index.php">
+                        <img src="images/logo.svg" alt="Root Flowers Logo" class="navbar-logo">
+                        <span class="brand-logo-text ms-2">Root Flowers</span>
                     </a>
                 </div>
             </nav>
