@@ -107,8 +107,7 @@
                     </div>
                 </div>
                 <div class="text-center mt-4">
-                    <a class="view-more-chevron" data-bs-toggle="collapse" href="#moreOccasions" 
-                    role="button" aria-expanded="false" aria-controls="moreOccasions">
+                    <a class="btn btn-outline-primary rounded-pill view-more-btn" data-bs-toggle="collapse" href="#moreOccasions" role="button" aria-expanded="false" aria-controls="moreOccasions">
                         <span class="view-more-text">View More</span>
                         <i class="bi bi-chevron-down ms-2"></i>
                     </a>
@@ -190,8 +189,7 @@
                     </div>
                 </div>
                 <div class="text-center mt-4">
-                    <a class="view-more-chevron" data-bs-toggle="collapse" href="#moreSignature" 
-                    role="button" aria-expanded="false" aria-controls="moreOccasions">
+                    <a class="btn btn-outline-primary rounded-pill view-more-btn" data-bs-toggle="collapse" href="#moreSignature" role="button" aria-expanded="false" aria-controls="moreOccasions">
                         <span class="view-more-text">View More</span>
                         <i class="bi bi-chevron-down ms-2"></i>
                     </a>
@@ -273,8 +271,7 @@
                     </div>
                 </div>
                 <div class="text-center mt-4">
-                    <a class="view-more-chevron" data-bs-toggle="collapse" href="#moreSpecial" 
-                    role="button" aria-expanded="false" aria-controls="moreOccasions">
+                    <a class="btn btn-outline-primary rounded-pill view-more-btn" data-bs-toggle="collapse" href="#moreSpecial" role="button" aria-expanded="false" aria-controls="moreOccasions">
                         <span class="view-more-text">View More</span>
                         <i class="bi bi-chevron-down ms-2"></i>
                     </a>
@@ -286,26 +283,42 @@
         <?php include 'includes/footer.inc'; ?>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script>
+         <script>
             document.addEventListener('DOMContentLoaded', function () {
                 const viewMoreButtons = document.querySelectorAll('.view-more-btn');
 
                 viewMoreButtons.forEach(button => {
+                    // Part 1: Prevent the page from jumping on click
+                    button.addEventListener('click', function (event) {
+                        event.preventDefault();
+                    });
+
+                    // Part 2: Update text and icon when content is shown or hidden
                     const collapseTarget = document.querySelector(button.getAttribute('href'));
                     const buttonText = button.querySelector('.view-more-text');
                     const buttonIcon = button.querySelector('i');
+                    const categorySection = button.closest('.mb-5'); // Get the parent category section
 
                     if (collapseTarget) {
+                        // When the collapsible section begins to show
                         collapseTarget.addEventListener('show.bs.collapse', function () {
                             buttonText.textContent = 'View Less';
                             buttonIcon.classList.remove('bi-chevron-down');
                             buttonIcon.classList.add('bi-chevron-up');
                         });
 
+                        // When the collapsible section begins to hide
                         collapseTarget.addEventListener('hide.bs.collapse', function () {
                             buttonText.textContent = 'View More';
                             buttonIcon.classList.remove('bi-chevron-up');
                             buttonIcon.classList.add('bi-chevron-down');
+                        });
+
+                        // Part 3: After the section is hidden, scroll back smoothly
+                        collapseTarget.addEventListener('hidden.bs.collapse', function () {
+                            if (categorySection) {
+                                categorySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }
                         });
                     }
                 });

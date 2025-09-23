@@ -5,6 +5,13 @@
     $email = "";
     $password = "";
 
+    // Check if the user is already logged in by seeing if the 'user' session variable exists
+    if (isset($_SESSION['user'])) {
+        // If they are logged in, redirect them to the main menu page
+        header("Location: main_menu.php");
+        exit; // IMPORTANT: Stop the script from running further
+    }
+
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $email = trim($_POST['email'] ?? '');
         $password = $_POST['password'] ?? '';
@@ -65,8 +72,17 @@
         <link rel="icon" href="./images/logo.svg">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     </head>
-    <body id="reg_body">
-        <?php include 'includes/navbar.inc' ?>
+    <body class="reg-body">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm py-2">
+                <div class="container">
+                    <a class="navbar-brand" href="index.php">
+                        <img src="images/logo.svg" alt="Root Flowers Logo" class="navbar-logo">
+                        <span class="brand-logo-text ms-2">Root Flowers</span>
+                    </a>
+                </div>
+            </nav>
+        </header>
 
         <div class="reg-wrapper">
             <div class="container">
@@ -120,6 +136,9 @@
                                     <p class="mb-0" style="color: rgba(255,255,255,0.7);">Don't have an account? 
                                         <a href="registration.php">Register here</a>
                                     </p>
+                                </div>
+                                <div class="mt-3 text-center">
+                                    <a href="index.php" class="text-decoration-none"><i class="bi bi-house-door-fill"></i> Back to Home</a>
                                 </div>
                             </div>
                         </div>

@@ -8,7 +8,8 @@ echo <<<FOOTER
     </div>
     <div class="footer-section">
       <h6>Quick Links</h6>
-      <a href="index.php">Home</a><br>
+      <a href="index.php">Index</a><br>
+      <a href="main_menu.php">Home</a><br>
       <a href="products.php">Products</a><br>
       <a href="workshops.php">Workshops</a><br>
       <a href="studentworks.php">Student Works</a>
