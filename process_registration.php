@@ -58,7 +58,6 @@ if (!empty($errors)) {
 }
 
 // --- Save to file ---
-// Path inside your project: assignment1/data/User
 $dir = __DIR__ . "/data/User";  
 $file = $dir . "/user.txt";
 

@@ -34,6 +34,7 @@
                     <div class="collapse navbar-collapse" id="navbarRoot">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li class="nav-item"><a class="btn btn-light rounded-pill ms-lg-3 px-3 py-2" href="index.php"><i class="bi bi-house"></i></a></li>
+                            <li class="nav-item"><a class="btn btn-light rounded-pill ms-lg-3 px-3 py-2" href="update_profile.php"><i class="bi bi-person-circle"></i></a></li>
                             <li class="nav-item"><a class="btn btn-light rounded-pill ms-lg-3 px-3 py-2" href="logout.php">Logout</a></li>
                         </ul>
                     </div>

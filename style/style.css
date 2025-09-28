@@ -2,7 +2,7 @@
 filename: [RootFlowers Style] 
 author: [Ivan Liang Jin Ngu]
 created: [8/09/2025]
-last modified: [22/09/2025]
+last modified: [28/09/2025]
 description: [Styles for every single php files]
 */
 
@@ -203,45 +203,89 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 2px;
 }
 
-.carousel-wrapper {
+/* --- INDEX PAGE - INFINITE SCROLLING PRODUCT CAROUSEL --- */
+.product-carousel-wrapper {
     overflow: hidden;
-    width: 100%;
-    border: 4px solid #f8bbd0;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     position: relative;
-    background-color: #fce4ec; /* pastel pink */
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
-.carousel-track {
+.product-carousel-track {
     display: flex;
-    animation: scroll 20s linear infinite;
+    width: calc(350px * 16); 
+    animation: scroll 60s linear infinite;
 }
 
-.carousel-item-img {
-    flex: 0 0 calc(100% / 3); /* show 3 at a time */
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 5px;
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
 }
 
-.carousel-item-img img {
-    width: 80%;
-    height: 80%;
-    object-fit: cover;
-    border-radius: 12px;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.carousel-item-img:hover img {
-    transform: scale(1.05);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-}
-
-.carousel-wrapper:hover .carousel-track {
+.product-carousel-wrapper:hover .product-carousel-track {
     animation-play-state: paused;
+}
+
+.carousel-product-card {
+    width: 330px;
+    margin: 0 10px;
+    flex-shrink: 0;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.carousel-product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.carousel-product-card .card-img-container {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.carousel-product-card .card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.carousel-product-card:hover .card-img-top {
+    transform: scale(1.1);
+}
+
+.carousel-product-card .card-body {
+    padding: 1rem;
+}
+
+.carousel-product-card .card-title {
+    font-family: 'Merriweather', serif;
+    font-size: 1.15rem;
+    color: var(--bs-dark);
+    margin-bottom: 0.5rem;
+}
+
+/* ===== Assignment Links Section ===== */
+.assignment-links-section {
+    background-color: #fff;
+    border-top: 1px solid #eee;
+}
+
+.assignment-links-section .section-title {
+    color: var(--bs-dark);
+}
+
+.assignment-links-section .btn-lg {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
 footer {
@@ -570,6 +614,428 @@ footer p {
         background: rgba(0, 0, 0, 0.2); /* On mobile, add a dark overlay to ensure readability */
         border-radius: 15px;
     }
+}
+
+/* --- WORKSHOP PAGE STYLES --- */
+.workshop-page {
+    padding-top: 75px;
+}
+
+.workshop-page h1 {
+    color: #fff;
+}
+
+.workshop-main-flyer {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
+
+.workshop-page body, body.workshop-page {
+    background-color: #fffaf5;
+    background-image: repeating-linear-gradient(
+        -45deg,
+        #fff,
+        #fff 20px,
+        rgba(248, 187, 208, 0.15) 20px,
+        rgba(248, 187, 208, 0.15) 40px
+    );
+}
+
+.workshop-content-box {
+    background-color: #fff;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+.workshop-accordion .accordion-item {
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 10px !important;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.workshop-accordion .accordion-button {
+    background-color: #fff;
+    color: var(--bs-dark);
+    font-weight: 600;
+    font-family: 'Merriweather', serif;
+    font-size: 1.2rem;
+    padding: 1rem 1.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: none !important;
+}
+
+.workshop-accordion .accordion-button:hover {
+    background-color: #f8f9fa;
+}
+
+.workshop-accordion .accordion-button:not(.collapsed) {
+    background-color: var(--bs-primary);
+    color: #fff;
+}
+
+.workshop-accordion .accordion-button:not(.collapsed)::after {
+    filter: brightness(0) invert(1);
+}
+
+.workshop-accordion .accordion-body {
+    background-color: var(--bs-light);
+    font-size: 1rem;
+    padding: 1.5rem;
+}
+
+.workshop-accordion .accordion-body img {
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.workshop-accordion .workshop-details {
+    margin-top: 1rem;
+    padding-left: 0;
+}
+
+.workshop-accordion .workshop-details li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+}
+
+.workshop-accordion .workshop-details i {
+    color: var(--bs-primary);
+    margin-right: 0.75rem;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+}
+
+.studentworks-page {
+    padding-top: 75px;
+    background-color: #fffaf5;
+    background-image: repeating-linear-gradient(
+        -45deg,
+        #fff,
+        #fff 20px,
+        rgba(248, 187, 208, 0.15) 20px,
+        rgba(248, 187, 208, 0.15) 40px
+    );
+}
+
+.studentworks-page h1 {
+    color: #fff;
+}
+
+
+/* --- STUDENT WORKS GALLERY --- */
+.gallery-card {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-decoration: none;
+}
+.gallery-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+.gallery-card:hover img {
+    transform: scale(1.1);
+}
+.gallery-card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    padding: 2.5rem 1.5rem 1.5rem;
+    color: #fff;
+    transition: opacity 0.4s ease;
+}
+.gallery-card:hover .gallery-card-overlay {
+    opacity: 1; /* Overlay appears on hover */
+}
+.gallery-card-title {
+    font-weight: 700;
+    color: #fff;
+}
+.gallery-card-text {
+    color: rgba(255,255,255,0.8);
+}
+
+/* ===== STUDENT WORK DETAILS PAGE ENHANCEMENTS ===== */
+.studentwork-details-page {
+    padding-top: 75px;
+    background-color: #fffaf5;
+    background-image: repeating-linear-gradient(
+        -45deg,
+        #fff,
+        #fff 20px,
+        rgba(248, 187, 208, 0.15) 20px,
+        rgba(248, 187, 208, 0.15) 40px
+    );
+}
+
+.studentwork-details-page .details-content-box {
+    background-color: #fff;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    animation: fadeInUp 0.8s ease-out forwards; /* Reuse your cool animation */
+    border-top: 5px solid var(--bs-primary);
+}
+
+/* Fix the heading color to match your theme */
+.studentwork-details-page h1 {
+   color: var(--bs-dark);
+}
+
+/* Make the image fill its column and add a thematic border */
+.studentwork-details-page .student_img {
+    width: 80%;
+    border: 4px solid var(--bs-secondary); /* pastel pink border */
+}
+
+/* Style the workshop name as a decorative badge */
+.studentwork-details-page .workshop-badge {
+    display: inline-block;
+    padding: 0.4em 0.8em;
+    font-size: 0.9rem;
+    font-weight: 600;
+    background-color: var(--bs-light); /* peachy cream */
+    color: var(--bs-primary); /* sakura pink */
+    border-radius: 50px;
+}
+
+/* Style the description as an elegant blockquote */
+.studentwork-details-page .student-description {
+    border-left: 4px solid var(--bs-primary); /* sakura pink */
+    padding-left: 1.5rem;
+    font-style: italic;
+    color: #555;
+}
+
+/* ===== User Profile ===== */
+#profile_body {
+    padding-top: 75px;
+    background-color: #fffaf5;
+    background-image: repeating-linear-gradient(
+        -45deg,
+        #fff,
+        #fff 20px,
+        rgba(248, 187, 208, 0.15) 20px,
+        rgba(248, 187, 208, 0.15) 40px
+    );
+}
+
+.profile-card {
+  background-color: var(--bs-light);
+  border-top: 5px solid var(--bs-primary);
+}
+
+.profile_name {
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+  color: var(--bs-dark);
+}
+
+.profile_id {
+    font-family: 'Poppins', 'sans-serif';
+}
+
+.profile-image {
+  max-width: 200px;
+  height: 200px;
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  border-radius: 50%; /* Circular shape */
+  border: 8px solid var(--bs-secondary); /* Themed pastel pink border */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-image:hover {
+  transform: scale(1.05) rotate(2deg); /* Slight zoom and tilt effect on hover */
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+.profile-card .blockquote {
+  border-left: 5px solid var(--bs-primary);
+  text-align: left;
+  font-size: 1rem;
+  font-style: italic;
+  color: #555;
+}
+
+/* ===== UPDATE PROFILE PAGE ===== */
+.update-profile-page {
+    padding-top: 75px;
+    background-color: #fffaf5;
+    background-image: repeating-linear-gradient(
+        -45deg,
+        #fff,
+        #fff 20px,
+        rgba(248, 187, 208, 0.15) 20px,
+        rgba(248, 187, 208, 0.15) 40px
+    );
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.update-profile-card {
+    background-color: #fff;
+    border-top: 5px solid var(--bs-primary);
+    max-width: 900px; /* Controls the max width of the card */
+}
+
+.update-profile-page .form-control,
+.update-profile-page .form-select {
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.update-profile-page .form-control:focus,
+.update-profile-page .form-select:focus {
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 0.25rem rgba(255, 107, 135, 0.25);
+}
+
+.update-profile-page .btn-secondary {
+    background-color: #ccc;
+    border-color: #ccc;
+    color: #333;
+}
+
+.update-profile-page .btn-secondary:hover {
+    background-color: #bbb;
+    border-color: #bbb;
+}
+.gallery-card-text {
+    color: rgba(255,255,255,0.8);
+}
+
+/* ===== UPDATE PROFILE PAGE STYLES ===== */
+.update-profile-page {
+    padding-top: 75px;
+    background-color: #fffaf5; /* Light peachy background */
+    /* Adds the subtle repeating background pattern */
+    background-image: repeating-linear-gradient(
+        -45deg,
+        #fff,
+        #fff 20px,
+        rgba(248, 187, 208, 0.15) 20px,
+        rgba(248, 187, 208, 0.15) 40px
+    );
+}
+
+.update-profile-card {
+    background-color: var(--bs-light);
+    border-top: 5px solid var(--bs-primary); /* Sakura pink top accent */
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.update-profile-card .profile_name {
+    font-family: 'Merriweather', serif;
+    color: var(--bs-dark);
+}
+
+.update-profile-card .profile_id {
+    font-family: 'Poppins', 'sans-serif';
+}
+
+.update-profile-card .profile-image {
+  width: 180px;  /* Slightly smaller for better balance */
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid var(--bs-secondary); /* Pastel pink border */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.update-profile-card .profile-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Themed Form Styles */
+.update-profile-card .form-control,
+.update-profile-card .form-select {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px 12px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.update-profile-card .form-control:focus,
+.update-profile-card .form-select:focus {
+    border-color: var(--bs-primary); /* Sakura pink on focus */
+    box-shadow: 0 0 0 0.25rem rgba(255, 107, 135, 0.25); /* Sakura pink glow */
+}
+
+/* ===== About Page Layout & Styles ===== */
+.about-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the page is at least as tall as the screen */
+    padding-top: 75px;
+    background-color: #fffaf5;
+    background-image: repeating-linear-gradient(
+        -45deg,
+        #fff,
+        #fff 20px,
+        rgba(248, 187, 208, 0.15) 20px,
+        rgba(248, 187, 208, 0.15) 40px
+    );
+}
+
+/* This makes the main content area expand and push the footer down */
+.about-page main {
+    flex: 1 0 auto;
+}
+
+.about-card {
+    background-color: var(--bs-light);
+    border-top: 5px solid var(--bs-primary);
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    max-width: 900px;
+}
+
+.about-card h5 {
+    font-family: 'Merriweather', serif;
+    margin-top: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #eee;
+}
+
+.about-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.about-card ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.about-card ul li i {
+    color: var(--bs-primary);
+    margin-right: 10px;
+}
+
+.php-version {
+    background-color: var(--bs-secondary);
+    color: var(--bs-primary);
+    font-weight: bold;
+    padding: 0.2em 0.6em;
+    border-radius: 5px;
+    font-family: monospace;
 }
 
 
