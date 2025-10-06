@@ -13,19 +13,42 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
 
-    // Basic password validation
+    // --- 1. Find the current (old) password hash from the file ---
+    $old_password_hash = null;
+    $email_to_update = $_SESSION['reset_email'];
+    $file = __DIR__ . "/../../data/User/user.txt";
+    $lines = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+
+    foreach ($lines as $line) {
+        // Find the correct user's line
+        if (strpos($line, "Email:$email_to_update") !== false) {
+            $parts = explode('|', $line);
+            foreach ($parts as $part) {
+                if (strpos($part, "Password:") === 0) {
+                    // Extract the hash from "Password:the_hash_string"
+                    $old_password_hash = substr($part, strlen("Password:"));
+                    break; // Exit inner loop once password is found
+                }
+            }
+            break; // Exit outer loop once user is found
+        }
+    }
+
+    // --- 2. Perform all password validations ---
     if (empty($password) || strlen($password) < 8) {
         $errors[] = "Password must be at least 8 characters long.";
     }
     if ($password !== $confirm_password) {
         $errors[] = "Passwords do not match.";
     }
+    // New Check: Compare new password with the old hash
+    if ($old_password_hash && password_verify($password, $old_password_hash)) {
+        $errors[] = "New password cannot be the same as your old password.";
+    }
+
 
     if (empty($errors)) {
         // --- Success! Update the password in the user file ---
-        $email_to_update = $_SESSION['reset_email'];
-        $file = __DIR__ . "/../../data/User/user.txt";
-        $lines = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
         $updated_lines = [];
         
         foreach ($lines as $line) {
@@ -34,6 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $new_parts = [];
                 foreach ($parts as $part) {
                     if (strpos($part, "Password:") === 0) {
+                        // Replace the old hash with the new one
                         $new_parts[] = "Password:" . password_hash($password, PASSWORD_DEFAULT);
                     } else {
                         $new_parts[] = $part;

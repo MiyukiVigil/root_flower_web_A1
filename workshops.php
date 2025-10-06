@@ -100,7 +100,7 @@
                             <h2 class="accordion-header" id="headingFlorist1">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFlorist1" aria-expanded="false" aria-controls="collapseFlorist1">
                                     <i class="bi bi-award me-3"></i>
-                                    Florist To Be 1 (Foundational)
+                                    Florist To Be 1
                                 </button>
                             </h2>
                             <div id="collapseFlorist1" class="accordion-collapse collapse" aria-labelledby="headingFlorist1" data-bs-parent="#workshopAccordion">
@@ -129,7 +129,7 @@
                             <h2 class="accordion-header" id="headingFlorist2">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFlorist2" aria-expanded="false" aria-controls="collapseFlorist2">
                                     <i class="bi bi-journal-check me-3"></i>
-                                    Florist To Be 2 (Advanced)
+                                    Florist To Be 2
                                 </button>
                             </h2>
                             <div id="collapseFlorist2" class="accordion-collapse collapse" aria-labelledby="headingFlorist2" data-bs-parent="#workshopAccordion">

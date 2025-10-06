@@ -2,7 +2,7 @@
 filename: [RootFlowers Style] 
 author: [Ivan Liang Jin Ngu]
 created: [8/09/2025]
-last modified: [28/09/2025]
+last modified: [7/10/2025]
 description: [Styles for every single php files]
 */
 
@@ -270,6 +270,42 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.15rem;
     color: var(--bs-dark);
     margin-bottom: 0.5rem;
+}
+
+/* Custom Social Button Colors */
+.btn-instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    border: none;
+    color: white;
+}
+
+.btn-instagram:hover {
+    opacity: 0.9;
+    color: white;
+}
+
+.btn-facebook {
+    background-color: #1877F2;
+    border-color: #1877F2;
+    color: white;
+}
+
+.btn-facebook:hover {
+    background-color: #166fe5; /* Slightly darker blue on hover */
+    border-color: #166fe5;
+    color: white;
+}
+
+.btn-whatsapp {
+    background-color: #25D366;
+    border-color: #25D366;
+    color: white;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1ebe5a; /* Slightly darker green on hover */
+    border-color: #1ebe5a;
+    color: white;
 }
 
 /* ===== Assignment Links Section ===== */
@@ -1100,13 +1136,6 @@ footer p {
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
-}
-
-
-/* ===== Keyframes and old styles ===== */
-@keyframes scroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
 }
 
 @media (max-width: 576px) {

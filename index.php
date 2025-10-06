@@ -34,11 +34,17 @@
                     <a href="login.php" class="btn btn-light btn-lg m-2"><i class="bi bi-box-arrow-in-right me-2"></i>Login</a>
                     <a href="registration.php" class="btn btn-light btn-lg m-2"><i class="bi bi-person-plus-fill me-2"></i>Register</a>   
                 </div>
-                 <p class="mt-4">
-                    <a href="https://api.whatsapp.com/send?phone=60143399709" class="btn btn-success">
-                        <i class="bi bi-whatsapp"></i> Chat with Us on WhatsApp
+                <div class="mt-4">
+                    <a href="https://www.instagram.com/root.flowersss/" class="btn btn-instagram btn-lg m-2" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i class="bi bi-instagram"></i>
                     </a>
-                </p>
+                    <a href="https://www.facebook.com/theRootFlowerGift/" class="btn btn-facebook btn-lg m-2" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=60143399709" class="btn btn-whatsapp btn-lg m-2" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                        <i class="bi bi-whatsapp"></i>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -117,7 +123,7 @@
                          </p>
                          <div>
                             <a href="about.php" class="btn btn-primary btn-lg m-2"><i class="bi bi-info-circle-fill me-2"></i>About This Assignment</a>
-                            <a href="profile.php" class="btn btn-outline-primary btn-lg m-2"><i class="bi bi-person-circle me-2"></i>My Profile</a>
+                            <a href="profile.php" class="btn btn-primary btn-lg m-2"><i class="bi bi-person-circle me-2"></i>My Profile</a>
                             <a href="https://github.com/MiyukiVigil/root_flower_web_A1" class="btn btn-primary btn-lg m-2"><i class="bi bi-github"></i> Github Page</a>
                          </div>
                     </div>
