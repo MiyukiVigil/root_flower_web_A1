@@ -118,6 +118,7 @@
                          <div>
                             <a href="about.php" class="btn btn-primary btn-lg m-2"><i class="bi bi-info-circle-fill me-2"></i>About This Assignment</a>
                             <a href="profile.php" class="btn btn-outline-primary btn-lg m-2"><i class="bi bi-person-circle me-2"></i>My Profile</a>
+                            <a href="https://github.com/MiyukiVigil/root_flower_web_A1" class="btn btn-primary btn-lg m-2"><i class="bi bi-github"></i> Github Page</a>
                          </div>
                     </div>
                 </div>

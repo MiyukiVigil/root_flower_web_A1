@@ -1044,6 +1044,7 @@ footer p {
     margin-top: 0.2em;
     flex-shrink: 0;
 }
+
 .php-version {
     background-color: var(--bs-secondary);
     color: var(--bs-primary);
@@ -1051,6 +1052,54 @@ footer p {
     padding: 0.2em 0.6em;
     border-radius: 5px;
     font-family: monospace;
+}
+
+/* ===== Verify OTP Page Layout & Styles ===== */
+
+.otp-card {
+    background-color: rgba(255, 255, 255, 0.95); /* Slightly less transparent */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    color: #333; /* Default text color */
+}
+
+.otp-card .form-control {
+    border-radius: 8px;
+    height: 3.5rem; /* Taller input */
+    font-size: 1.5rem; /* Larger font */
+    text-align: center; /* Center OTP digits */
+    letter-spacing: 0.5rem; /* Space out the OTP digits */
+}
+
+.otp-card .btn-primary {
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 1.5rem; /* More space above button */
+    background-image: linear-gradient(to right, #f8bbd0, #ff80a6); /* Soft pink gradient */
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.otp-card .btn-primary:hover {
+    box-shadow: 0 5px 15px rgba(248, 187, 208, 0.4);
+    transform: translateY(-2px);
+}
+
+.otp-icon {
+    font-size: 4rem; /* Large icon */
+    color: var(--bs-primary); /* Your primary pink color */
+    margin-bottom: 1rem;
+    animation: bounce 2s infinite ease-in-out; /* Subtle animation */
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
 
