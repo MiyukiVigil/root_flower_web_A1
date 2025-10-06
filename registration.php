@@ -60,7 +60,7 @@
                                 <div class="alert alert-success"><?= $success ?></div>
                             <?php endif; ?>
 
-                            <form action="process_registration.php" method="POST" novalidate>
+                            <form action="process_register.php" method="POST" novalidate>
                                 
                                 <div class="mb-3">
                                     <label class="form-label">First Name</label>

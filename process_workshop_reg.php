@@ -34,7 +34,7 @@ if (!empty($errors)) {
 }
 
 // --- Save to file ---
-$dir = __DIR__ . "/data/Workshop";
+$dir = __DIR__ . "/../../data/Workshop";
 $file = $dir . "/workshop_registrations.txt";
 
 // Create directory if it doesn't exist

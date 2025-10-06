@@ -53,11 +53,12 @@
                                         </div>
                                         <div class="col-md-7">
                                             <p>Perfect for beginners or as a fun activity. Join our single-day workshops to learn a specific skill and take home a beautiful creation.</p>
-                                            <h6 class="text-muted">Upcoming Dates & Topics:</h6>
+                                            <h6 class="text-muted">Details:</h6>
                                             <ul class="list-unstyled workshop-details">
-                                                <li><i class="bi bi-check-circle-fill"></i> <strong>Aug 30, 2025:</strong> Mix Flowers Bouquet, Flowers Basket</li>
-                                                <li><i class="bi bi-check-circle-fill"></i> <strong>Sep 13, 2025:</strong> Mix Flowers Bouquet, Centerpiece</li>
-                                                <li><i class="bi bi-check-circle-fill"></i> <strong>Oct 18, 2025:</strong> Mix Flowers Bouquet, Flowers Box</li>
+                                                <li><i class="bi bi-calendar-check"></i> <strong>Upcoming Dates:</strong> Oct 18, 2025 | Nov 15, 2025</li>
+                                                <li><i class="bi bi-clock"></i> <strong>Time:</strong> 10:00 AM - 1:00 PM</li>
+                                                <li><i class="bi bi-tag"></i> <strong>Price:</strong> RM 180</li>
+                                                <li><i class="bi bi-geo-alt"></i> <strong>Venue:</strong> Root Flowers Studio, Kuching</li>
                                             </ul>
                                             <a href="workshop_reg.php?title=Hobby+Class" class="btn btn-primary w-100 mt-3">Register for Hobby Class</a>
                                         </div>
@@ -81,11 +82,12 @@
                                         </div>
                                         <div class="col-md-7">
                                             <p>Master the art of bouquet making. This comprehensive 2-day course covers a wide range of popular styles, from classic to contemporary hand-tied designs.</p>
-                                            <h6 class="text-muted">Curriculum Includes:</h6>
+                                            <h6 class="text-muted">Details:</h6>
                                             <ul class="list-unstyled workshop-details">
-                                                <li><i class="bi bi-flower1"></i> Spiral Hand-tied (Round & Classic)</li>
-                                                <li><i class="bi bi-flower1"></i> Korean & Russian Bouquet Styles</li>
-                                                <li><i class="bi bi-flower1"></i> Single Stalk & Mix Flowers Bouquets</li>
+                                                <li><i class="bi bi-calendar-check"></i> <strong>Date:</strong> Oct 25-26, 2025 (Sat & Sun)</li>
+                                                <li><i class="bi bi-clock"></i> <strong>Time:</strong> 10:00 AM - 4:00 PM</li>
+                                                <li><i class="bi bi-tag"></i> <strong>Price:</strong> RM 650</li>
+                                                <li><i class="bi bi-geo-alt"></i> <strong>Venue:</strong> Root Flowers Studio, Kuching</li>
                                             </ul>
                                             <a href="workshop_reg.php?title=Hand-tied+Bouquet+Course" class="btn btn-primary w-100 mt-3">Register for this Course</a>
                                         </div>
@@ -109,11 +111,12 @@
                                         </div>
                                         <div class="col-md-7">
                                             <p>Your first step to becoming a professional. This foundational module covers essential floristry skills and a broad range of classic designs.</p>
-                                            <h6 class="text-muted">Curriculum Includes:</h6>
+                                            <h6 class="text-muted">Details:</h6>
                                             <ul class="list-unstyled workshop-details">
-                                                <li><i class="bi bi-check-circle-fill"></i> Korean & Russian Bouquets</li>
-                                                <li><i class="bi bi-check-circle-fill"></i> Bridal Bouquets & Boutineers</li>
-                                                <li><i class="bi bi-check-circle-fill"></i> Baskets, Centerpieces & Stands</li>
+                                                <li><i class="bi bi-calendar-check"></i> <strong>Next Intake:</strong> November 2025 (4 Days)</li>
+                                                <li><i class="bi bi-clock"></i> <strong>Time:</strong> 10:00 AM - 4:00 PM</li>
+                                                <li><i class="bi bi-tag"></i> <strong>Price:</strong> RM 1,500</li>
+                                                <li><i class="bi bi-geo-alt"></i> <strong>Venue:</strong> Root Flowers Studio, Kuching</li>
                                             </ul>
                                             <a href="workshop_reg.php?title=Florist+To+Be+1+(Foundational)" class="btn btn-primary w-100 mt-3">Register for this Course</a>
                                         </div>
@@ -137,11 +140,12 @@
                                         </div>
                                         <div class="col-md-7">
                                             <p>Take your skills to the next level. This advanced module explores artistic designs, specialized techniques, and larger, more complex arrangements.</p>
-                                            <h6 class="text-muted">Curriculum Includes:</h6>
+                                            <h6 class="text-muted">Details:</h6>
                                             <ul class="list-unstyled workshop-details">
-                                                <li><i class="bi bi-check-circle-fill"></i> Natural Design Bouquets</li>
-                                                <li><i class="bi bi-check-circle-fill"></i> Advanced Bridal Bouquets (Waterfall)</li>
-                                                <li><i class="bi bi-check-circle-fill"></i> Flowers Boxes & Mirror Stands</li>
+                                                <li><i class="bi bi-calendar-check"></i> <strong>Next Intake:</strong> December 2025 (4 Days)</li>
+                                                <li><i class="bi bi-clock"></i> <strong>Time:</strong> 10:00 AM - 4:00 PM</li>
+                                                <li><i class="bi bi-tag"></i> <strong>Price:</strong> RM 1,800</li>
+                                                <li><i class="bi bi-geo-alt"></i> <strong>Venue:</strong> Root Flowers Studio, Kuching</li>
                                             </ul>
                                             <a href="workshop_reg.php?title=Florist+To+Be+2+(Advanced)" class="btn btn-primary w-100 mt-3">Register for this Course</a>
                                         </div>

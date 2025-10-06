@@ -16,7 +16,7 @@
         $email = trim($_POST['email'] ?? '');
         $password = $_POST['password'] ?? '';
 
-        $file = __DIR__ . "/data/User/user.txt";
+        $file = __DIR__ . "/../../data/User/user.txt";
 
         $found = false;
 
@@ -86,9 +86,20 @@
 
         <div class="reg-wrapper">
             <div class="container">
+                
+                <?php if (isset($_SESSION['success_message'])): ?>
+                    <div class="text-center" data-aos="fade-down">
+                         <div class="success-pill">
+                            <i class="bi bi-check-circle-fill me-2"></i>
+                            <?= htmlspecialchars($_SESSION['success_message']); ?>
+                         </div>
+                    </div>
+                    <?php unset($_SESSION['success_message']); // Clear the message so it doesn't show again ?>
+                <?php endif; ?>
+
                 <div class="row align-items-center justify-content-center">
                     
-                    <div class="col-lg-6 register-info text-center text-lg-start mb-5 mb-lg-0">
+                    <div class="col-lg-6 register-info text-center text-lg-start mb-5 mb-lg-0" data-aos="fade-right">
                         <h1 class="display-4 text-white fw-bold">Welcome Back!</h1>
                         <p class="lead text-white-75 mt-3">
                             Sign in to access your account and continue your journey with RootFlowers. We're glad to see you again.
@@ -96,7 +107,7 @@
                         <img src="./images/logo.svg" alt="RootFlowers Logo" class="register-info-logo mt-4">
                     </div>
 
-                    <div class="col-lg-6">
+                    <div class="col-lg-6" data-aos="fade-left">
                         <div class="card register-card">
                             <div class="card-body p-4">
                                 <h2 class="text-center mb-4">👋 Sign In</h2>
@@ -129,7 +140,10 @@
                                     <div class="d-grid mb-3">
                                         <button type="submit" class="btn btn-primary">Login</button>
                                     </div>
-
+                                    
+                                    <div class="mb-4 text-end">
+                                        <a href="forgot_password.php" class="small">Forgot Password?</a>
+                                    </div>
                                 </form>
 
                                 <div class="mt-4 text-center">
@@ -150,5 +164,19 @@
         <?php include 'includes/footer.inc' ?>
         
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- AOS (Animate on Scroll) JS -->
+        <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+        <!-- Initialize AOS -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                AOS.init({
+                    duration: 800,
+                    easing: 'ease-in-out', 
+                    once: true
+                });
+            });
+        </script>
     </body>
 </html>
+

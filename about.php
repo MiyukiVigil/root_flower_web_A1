@@ -14,7 +14,17 @@
 </head>
 <body class="about-page">
     <header>
-        <?php include 'includes/navbar.inc'; ?>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm py-2">
+            <div class="container">
+                <a class="navbar-brand" href="index.php">
+                    <img src="images/logo.svg" alt="Root Flowers Logo" class="navbar-logo">
+                    <span class="brand-logo-text ms-2">Root Flowers</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarRoot" aria-controls="navbarRoot" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
     </header>
 
     <main class="container my-5">
@@ -31,19 +41,7 @@
 
                     <h5><i class="bi bi-check2-square"></i> Completed Tasks</h5>
                     <ul>
-                        <li><i class="bi bi-check"></i><b>Task 1:</b> Home Page (`index.php`)</li>
-                        <li><i class="bi bi-check"></i><b>Task 2:</b> Main Menu Page (`main_menu.php`)</li>
-                        <li><i class="bi bi-check"></i><b>Task 3:</b> Products Page (`products.php`)</li>
-                        <li><i class="bi bi-check"></i><b>Task 4:</b> Workshops Page (`workshops.php`)</li>
-                        <li><i class="bi bi-check"></i><b>Task 5:</b> Student Works Page (`studentworks.php`)</li>
-                        <li><i class="bi bi-check"></i><b>Task 6:</b> View Student Work Page (`studentwork_detail.php`)</li>
-                        <li><i class="bi bi-check"></i><b>Task 7:</b> Profile Page (`profile.php`)</li>
-                        <li><i class="bi bi-check"></i><b>Task 8:</b> Update Profile Page (`update_profile.php`)</li>
-                        <li><i class="bi bi-check"></i><b>Task 9:</b> Account Registration Page (`registration.php`)</li>
-                        <li><i class="bi bi-check"></i><b>Task 10:</b> Process Registration Page (`process_registration.php`)</li>
-                        <li><i class="bi bi-check"></i><b>Task 11:</b> Workshop Registration Page (`workshop_reg.php`)</li>
-                        <li><i class="bi bi-check"></i><b>Task 12:</b> Login Page (`login.php`)</li>
-                        <li><i class="bi bi-check"></i><b>Task 13:</b> About Page (`about.php`)</li>
+                        <li><i class="bi bi-check"></i><b>Task 1-13:</b> All core assignment tasks have been completed as per the specification document.</li>
                     </ul>
 
                     <h5><i class="bi bi-x-square"></i> Unattempted or Incomplete Tasks</h5>
@@ -51,12 +49,20 @@
                         <li><i class="bi bi-check"></i>All assigned tasks have been attempted and completed.</li>
                     </ul>
 
+                    <h5><i class="bi bi-star-fill"></i> Extra Features & Initiative</h5>
+                    <p>To demonstrate skills beyond the core requirements, the following advanced security features were implemented:</p>
+                    <ul>
+                        <li><i class="bi bi-shield-check"></i><div><b>OTP Verification System:</b> A One-Time Password system was integrated for new user registrations and password resets. This enhances security by verifying that the user owns the email address they claim.</div></li>
+                        <li><i class="bi bi-key-fill"></i><div><b>Secure Password Reset Flow:</b> A complete "Forgot Password" feature was built, allowing users to securely reset their password via an OTP sent to their registered email.</div></li>
+                        <li><i class="bi bi-envelope-check-fill"></i><div><b>Authenticated Email Sending:</b> Implemented <strong>PHPMailer</strong> with SMTP authentication to reliably and securely send system emails, a professional standard superior to PHP's basic `mail()` function.</div></li>
+                    </ul>
                     <h5><i class="bi bi-box-seam"></i> Frameworks & 3rd Party Libraries</h5>
                     <ul>
-                        <li><i class="bi bi-bootstrap-fill"></i><b>Bootstrap v5.3.3</b> - Used as the core CSS framework for layout and components.</li>
-                        <li><i class="bi bi-person-bounding-box"></i><b>Bootstrap Icons v1.11.3</b> - Used for iconography throughout the site.</li>
-                        <li><i class="bi bi-google"></i><b>Google Fonts</b> - Used for the 'Poppins' and 'Merriweather' typefaces.</li>
-                        <li><i class="bi bi-box-arrow-down"></i><b>AOS (Animate on Scroll) v2.3.4</b> - Used for scroll-triggered animations on the home page.</li>
+                        <li><i class="bi bi-bootstrap-fill"></i><div><b>Bootstrap v5.3.3</b> - Used as the core CSS framework for layout and components.</div></li>
+                        <li><i class="bi bi-person-bounding-box"></i><b><div>Bootstrap Icons v1.11.3</b> - Used for iconography throughout the site.</div></li>
+                        <li><i class="bi bi-google"></i><div><b>Google Fonts</b> - Used for the 'Poppins' and 'Merriweather' typefaces.</div></li>
+                        <li><i class="bi bi-box-arrow-down"></i><div><b>AOS (Animate on Scroll) v2.3.4</b> - Used for scroll-triggered animations on the home page.</div></li>
+                        <li><i class="bi bi-envelope-paper-heart-fill"></i><div><b>PHPMailer v6.9.1</b> - Used for robust and secure SMTP-based email sending.</div></li>
                     </ul>
 
                     <h5><i class="bi bi-camera-video-fill"></i> Video Presentation</h5>
@@ -72,8 +78,6 @@
             </div>
         </div>
     </main>
-
-    <?php include 'includes/footer.inc'; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

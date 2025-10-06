@@ -7,8 +7,8 @@
         exit;
     }
 
-    // --- Pre-fill user data if available ---
-    $users_file = __DIR__ . '/data/User/user.txt';
+    // --- Pre-fill user data ---
+    $users_file = __DIR__ . '/../../data/User/user.txt';
     $current_user_data = null;
     $first_name = '';
     $last_name = '';

@@ -13,8 +13,19 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     </head>
     <body id="profile_body">
-        <?php include 'includes/navbar.inc'; ?>
-
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm py-2">
+                <div class="container">
+                    <a class="navbar-brand" href="index.php">
+                        <img src="images/logo.svg" alt="Root Flowers Logo" class="navbar-logo">
+                        <span class="brand-logo-text ms-2">Root Flowers</span>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarRoot" aria-controls="navbarRoot" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </nav>
+        </header>
         <main class="container py-5">
             <div class="profile-card text-center p-4 p-md-5 shadow-lg rounded-4" data-aos="fade-up">
                 
@@ -44,8 +55,6 @@
 
             </div>
         </main>
-
-        <?php include 'includes/footer.inc'; ?>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>

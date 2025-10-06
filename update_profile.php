@@ -7,7 +7,7 @@
         exit;
     }
 
-    $users_file = __DIR__ . '/data/User/user.txt';
+    $users_file = __DIR__ . "/../../data/User/user.txt";
     $current_user_data = null;
     $feedback_message = '';
     $feedback_type = 'success';
