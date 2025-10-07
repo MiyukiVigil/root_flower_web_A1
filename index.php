@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE HTML>
 <html lang="en">
     <head>
@@ -31,8 +34,17 @@
                 <p class="lead">Bringing joy through bouquets & floral workshops in Kuching</p>
                 <div class="mt-4">
                     <a href="main_menu.php" class="btn btn-primary btn-lg m-2"><i class="bi bi-grid-3x3-gap-fill me-2"></i>Main Menu</a>
-                    <a href="login.php" class="btn btn-light btn-lg m-2"><i class="bi bi-box-arrow-in-right me-2"></i>Login</a>
-                    <a href="registration.php" class="btn btn-light btn-lg m-2"><i class="bi bi-person-plus-fill me-2"></i>Register</a>   
+
+                    <?php if (isset($_SESSION['user'])): ?>
+                        
+                        <a href="logout.php" class="btn btn-danger btn-lg m-2"><i class="bi bi-box-arrow-right me-2"></i>Logout</a>
+                        
+                    <?php else: ?>
+
+                        <a href="login.php" class="btn btn-light btn-lg m-2"><i class="bi bi-box-arrow-in-right me-2"></i>Login</a>
+                        <a href="registration.php" class="btn btn-light btn-lg m-2"><i class="bi bi-person-plus-fill me-2"></i>Register</a>
+                        
+                    <?php endif; ?>
                 </div>
                 <div class="mt-4">
                     <a href="https://www.instagram.com/root.flowersss/" class="btn btn-instagram btn-lg m-2" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
