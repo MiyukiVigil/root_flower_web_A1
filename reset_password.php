@@ -122,15 +122,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                             <form method="POST" action="reset_password.php">
                                 <div class="mb-3">
-                                    <label class="form-label">New Password</label>
-                                    <input type="password" name="password" class="form-control" required>
+                                    <label for="password" class="form-label">New Password <i class="bi bi-info-circle" data-bs-toggle="tooltip" data-bs-placement="right" title="Password must be at least 8 characters long and contain a mix of letters, numbers, and symbols."></i></label>
+                                    <div class="password-wrapper">
+                                        <input type="password" class="form-control" id="password" name="password" required>
+                                        <i class="bi bi-eye-slash toggle-password-icon" id="togglePassword"></i>
+                                    </div>
                                 </div>
+
                                 <div class="mb-3">
-                                    <label class="form-label">Confirm New Password</label>
-                                    <input type="password" name="confirm_password" class="form-control" required>
+                                    <label for="confirm_password" class="form-label">Confirm New Password</label>
+                                    <div class="password-wrapper">
+                                        <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
+                                        <i class="bi bi-eye-slash toggle-password-icon" id="toggleConfirmPassword"></i>
+                                    </div>
                                 </div>
+
                                 <div class="d-grid">
-                                    <button type="submit" class="btn btn-primary">Reset Password</button>
+                                    <button type="submit" class="btn btn-primary">Update Password</button>
                                 </div>
                             </form>
                         </div>
@@ -138,5 +146,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
             </div>
         </div>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Toggle password visibility
+            document.getElementById('togglePassword').addEventListener('click', function() {
+                const passwordField = document.getElementById('password');
+                const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordField.setAttribute('type', type);
+                this.classList.toggle('bi-eye-slash');
+                this.classList.toggle('bi-eye');
+            });
+
+            document.getElementById('toggleConfirmPassword').addEventListener('click', function() {
+                const confirmPasswordField = document.getElementById('confirm_password');
+                const type = confirmPasswordField.getAttribute('type') === 'password' ? 'text' : 'password';
+                confirmPasswordField.setAttribute('type', type);
+                this.classList.toggle('bi-eye-slash');
+                this.classList.toggle('bi-eye');
+            });
+
+            // Initialize AOS animations
+            AOS.init();
+
+            // Initialize Bootstrap tooltips
+            const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+        });
+        </script>
     </body>
 </html>

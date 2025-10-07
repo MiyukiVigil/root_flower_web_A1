@@ -125,10 +125,15 @@
 
                                     <div class="mb-4">
                                         <label class="form-label">Password</label>
-                                        <input type="password" 
-                                               name="password" 
-                                               class="form-control <?= !empty($errors['login']) ? 'is-invalid' : '' ?>" 
-                                               required>
+                                        <div class="password-wrapper">
+                                            <input type="password" 
+                                                    id="password"
+                                                    name="password" 
+                                                    class="form-control <?= !empty($errors['login']) ? 'is-invalid' : '' ?>" 
+                                                    value="<?= htmlspecialchars($password) ?>" 
+                                                    required>
+                                            <i class="bi bi-eye-slash toggle-password-icon" id="togglePassword"></i>
+                                        </div>
                                     </div>
 
                                     <?php if (!empty($errors['login'])): ?>
@@ -172,6 +177,16 @@
                     duration: 800,
                     easing: 'ease-in-out', 
                     once: true
+                });
+
+                // Password visibility toggle
+                const togglePassword = document.getElementById('togglePassword');
+                const passwordField = document.getElementById('password');
+                togglePassword.addEventListener('click', function () {
+                    const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+                    passwordField.setAttribute('type', type);
+                    this.classList.toggle('bi-eye');
+                    this.classList.toggle('bi-eye-slash');
                 });
             });
         </script>

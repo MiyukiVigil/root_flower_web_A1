@@ -136,22 +136,28 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <label class="form-label">Password</label>
-                                    <input type="password" 
-                                           name="password" 
-                                           class="form-control <?= !empty($errors['password']) ? 'is-invalid' : '' ?>" 
-                                           required>
+                                    <label for="password" class="form-label">Password
+                                        <i class="bi bi-info-circle ms-2" 
+                                            data-bs-toggle="tooltip" 
+                                            data-bs-placement="right"
+                                            data-bs-title="Password must be at least 8 characters long and include a number and a letter.">
+                                        </i>
+                                    </label>
+                                    <div class="password-wrapper">
+                                        <input type="password" class="form-control" id="password" name="password" required>
+                                        <i class="bi bi-eye-slash toggle-password-icon" id="togglePassword"></i>
+                                    </div>
                                     <?php if (!empty($errors['password'])): ?>
                                         <div class="invalid-feedback"><?= $errors['password'] ?></div>
                                     <?php endif; ?>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label class="form-label">Confirm Password</label>
-                                    <input type="password" 
-                                           name="confirm_password" 
-                                           class="form-control <?= !empty($errors['confirm_password']) ? 'is-invalid' : '' ?>" 
-                                           required>
+                                    <label for="confirm_password" class="form-label">Confirm Password</label>
+                                    <div class="password-wrapper">
+                                        <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
+                                        <i class="bi bi-eye-slash toggle-password-icon" id="toggleConfirmPassword"></i>
+                                    </div>
                                     <?php if (!empty($errors['confirm_password'])): ?>
                                         <div class="invalid-feedback"><?= $errors['confirm_password'] ?></div>
                                     <?php endif; ?>
@@ -174,5 +180,32 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        
+            // Select all toggle icons on the page
+            const toggleIcons = document.querySelectorAll('.toggle-password-icon');
+
+            toggleIcons.forEach(icon => {
+                icon.addEventListener('click', function () {
+                // The input field is the element right before the icon
+                const passwordInput = this.previousElementSibling;
+                
+                // Toggle the type attribute
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+
+                // Toggle the icon's class
+                this.classList.toggle('bi-eye');
+                this.classList.toggle('bi-eye-slash');
+                });
+            });
+            // Initialize Bootstrap tooltips
+            const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+        });
+    </script>
+    </body>
 </html>

@@ -7,6 +7,13 @@
         exit;
     }
 
+    // Tells the browser and any proxies not to cache the page.
+    header("Cache-Control: no-cache, no-store, must-revalidate");
+    // For older HTTP/1.0 clients.
+    header("Pragma: no-cache");
+    // For proxies and old browsers, sets the expiration date to the past.
+    header("Expires: 0");
+
     $users_file = __DIR__ . "/../../data/User/user.txt";
     $current_user_data = null;
     $feedback_message = '';

@@ -529,6 +529,31 @@ footer p {
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
+.password-wrapper {
+  position: relative; /* This is crucial for positioning the icon */
+}
+
+.toggle-password-icon {
+  position: absolute;
+  /* Position it vertically centered and on the right */
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  
+  /* Style the icon for better UX */
+  cursor: pointer;
+  color: #6c757d; /* A neutral gray color */
+  transition: color 0.2s ease-in-out;
+}
+
+.toggle-password-icon:hover {
+  color: #fff; /* Or any brighter color that fits your theme */
+}
+
+.password-wrapper .form-control {
+  padding-right: 45px; /* Make space for the icon */
+}
+
 /* ===== Success Pill on Login Page ===== */
 .success-pill {
     display: inline-block;
