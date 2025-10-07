@@ -45,7 +45,7 @@
                     <a href="index.php" class="btn btn-primary rounded-pill px-4 py-2 m-2">
                         <i class="bi bi-house-door-fill me-2"></i>Home Page
                     </a>
-                    <a href="about.php" class="btn btn-outline-primary rounded-pill px-4 py-2 m-2">
+                    <a href="about.php" class="btn btn-primary rounded-pill px-4 py-2 m-2">
                         <i class="bi bi-info-circle-fill me-2"></i>About Page
                     </a>
                     <a href="mailto:104381576@students.swinburne.edu.my" class="btn btn-primary rounded-pill px-4 py-2 m-2">
