@@ -656,12 +656,11 @@ footer p {
 }
 
 .section-title::after {
-    /* We can disable the old ::after pseudo-element if it exists */
     display: none;
 }
 
 .product-card {
-    background-color: var(--bs-light); /* <-- ADD THIS LINE */
+    background-color: var(--bs-light);
     border: 1px solid #eee;
     border-top: 4px solid var(--bs-secondary); /* Pastel pink top border */
     transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
@@ -1239,7 +1238,5 @@ footer p {
     /* Ensure the brand text is still visible if the logo is too small */
     .navbar-brand .brand-logo-text {
         color: var(--bs-light) !important;
-        /* If you added the smaller screen media query, remove it or adjust this:
-        display: block !important; */
     }
 }
