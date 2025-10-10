@@ -137,20 +137,30 @@
 
                                 <div class="mb-3">
                                     <label for="password" class="form-label">Password
-                                        <i class="bi bi-info-circle ms-2" 
-                                            data-bs-toggle="tooltip" 
-                                            data-bs-placement="right"
-                                            data-bs-title="Password must be at least 8 characters long and include a number and a letter.">
+                                        <i class="bi bi-info-circle ms-2"
+                                        data-bs-toggle="tooltip"
+                                        data-bs-placement="right"
+                                        data-bs-title="Password must be at least 8 characters long and include a number and a letter.">
                                         </i>
                                     </label>
                                     <div class="password-wrapper">
-                                        <input type="password" class="form-control" id="password" name="password" required>
-                                        <i class="bi bi-eye-slash toggle-password-icon" id="togglePassword"></i>
+                                        <input type="password"
+                                            class="form-control <?= !empty($errors['password']) ? 'is-invalid' : '' ?>"
+                                            id="password"
+                                            name="password"
+                                            required
+                                            aria-describedby="passwordHelp">
+                                        <i class="bi bi-eye-slash toggle-password-icon"></i>
                                     </div>
+                                    <div id="password-strength-container" class="mt-1" style="height: 5px;">
+                                        <div id="password-strength-bar" class="progress-bar" role="progressbar" style="width: 0%; height: 5px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div id="password-strength-text" class="form-text"></div>
                                     <?php if (!empty($errors['password'])): ?>
-                                        <div class="invalid-feedback"><?= $errors['password'] ?></div>
+                                        <div class="invalid-feedback" id="passwordHelp"><?= $errors['password'] ?></div>
                                     <?php endif; ?>
                                 </div>
+
 
                                 <div class="mb-3">
                                     <label for="confirm_password" class="form-label">Confirm Password</label>
@@ -205,6 +215,111 @@
             const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
                 return new bootstrap.Tooltip(tooltipTriggerEl);
             });
+            
+            const passwordInput = document.getElementById('password');
+            const strengthBar = document.getElementById('password-strength-bar');
+            const strengthText = document.getElementById('password-strength-text');
+
+            /**
+             * Calculates the strength score of a password.
+             * Score is based on: length, presence of lower/upper case letters, numbers, and symbols.
+             * @param {string} password The password string.
+             * @returns {number} A score from 0 to 4.
+             */
+            function calculateStrength(password) {
+                let score = 0;
+                
+                if (password.length >= 8) { // Good length
+                    score++;
+                }
+                if (/[a-z]/.test(password) && /[A-Z]/.test(password)) { // Mixed case
+                    score++;
+                } else if (/[a-zA-Z]/.test(password)) { // Just letters
+                    score += 0.5;
+                }
+                if (/\d/.test(password)) { // Numbers
+                    score++;
+                }
+                if (/[^a-zA-Z0-9\s]/.test(password)) { // Symbols
+                    score++;
+                }
+                
+                return Math.floor(Math.min(score, 4)); // Max score is 4 for easy percentage conversion
+            }
+
+            function updateStrengthIndicator() {
+                const password = passwordInput.value;
+                const score = calculateStrength(password);
+                let width = 0;
+                let colorClass = 'bg-secondary'; // Default/Empty
+
+                if (password.length > 0) {
+                    switch (score) {
+                        case 0:
+                            width = 25;
+                            colorClass = 'bg-danger';
+                            strengthText.textContent = 'Weak';
+                            break;
+                        case 1:
+                            width = 25;
+                            colorClass = 'bg-danger';
+                            strengthText.textContent = 'Very Poor';
+                            break;
+                        case 2:
+                            width = 50;
+                            colorClass = 'bg-warning';
+                            strengthText.textContent = 'Fair';
+                            break;
+                        case 3:
+                            width = 75;
+                            colorClass = 'bg-primary';
+                            strengthText.textContent = 'Good';
+                            break;
+                        case 4:
+                            width = 100;
+                            colorClass = 'bg-success';
+                            strengthText.textContent = 'Excellent';
+                            break;
+                        default:
+                            width = 0;
+                            colorClass = 'bg-secondary';
+                            strengthText.textContent = '';
+                            break;
+                    }
+                } else {
+                    width = 0;
+                    strengthText.textContent = '';
+                    colorClass = 'bg-secondary';
+                }
+
+                // Update the bar's appearance
+                strengthBar.style.width = width + '%';
+                strengthBar.setAttribute('aria-valuenow', width);
+
+                // Remove old color classes and add the new one
+                strengthBar.className = 'progress-bar';
+                strengthBar.classList.add(colorClass);
+
+                // Add 'is-invalid' class if password is present but strength is too low (e.g., Weak)
+                if (password.length > 0 && score < 2) {
+                    passwordInput.classList.add('is-invalid');
+                    // Temporarily hide existing validation message if present, or create a new one for strength
+                    const existingError = document.querySelector('#passwordHelp.invalid-feedback');
+                    if (!existingError) {
+                        // Or just let server-side handle the final validation
+                    }
+                } else {
+                    // Only remove 'is-invalid' if no server-side error is present
+                    if (!'<?= !empty($errors['password']) ?>') { // Simple PHP check
+                        passwordInput.classList.remove('is-invalid');
+                    }
+                }
+            }
+
+            // Attach the update function to the input event of the password field
+            if (passwordInput) {
+                passwordInput.addEventListener('input', updateStrengthIndicator);
+            }
         });
     </script>
     </body>

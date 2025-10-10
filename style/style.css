@@ -2,7 +2,7 @@
 filename: [RootFlowers Style] 
 author: [Ivan Liang Jin Ngu]
 created: [8/09/2025]
-last modified: [7/10/2025]
+last modified: 10/10/2025]
 description: [Styles for every single php files]
 */
 
@@ -308,6 +308,22 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
 }
 
+.map-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    position: relative;
+    height: 0;
+}
+
+.map-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border: 0;
+}
+
 /* ===== Assignment Links Section ===== */
 .assignment-links-section {
     background-color: #fff;
@@ -547,11 +563,26 @@ footer p {
 }
 
 .toggle-password-icon:hover {
-  color: #fff; /* Or any brighter color that fits your theme */
+  color: #fff; /* Or any brighter color that fits theme */
 }
 
 .password-wrapper .form-control {
   padding-right: 45px; /* Make space for the icon */
+}
+
+#password-strength-container {
+    height: 5px; /* Ensures consistent bar height */
+    overflow: hidden; /* Keeps the progress bar within its container */
+    border-radius: 0.25rem; /* Matches Bootstrap's standard rounded corners */
+    background-color: #e9ecef; /* Light background for the track */
+}
+
+#password-strength {
+    position: relative;
+}
+
+#password-strength-text {
+    color: #fff;
 }
 
 /* ===== Success Pill on Login Page ===== */
@@ -860,11 +891,11 @@ footer p {
     padding: 2.5rem;
     border-radius: 20px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-    animation: fadeInUp 0.8s ease-out forwards; /* Reuse your cool animation */
+    animation: fadeInUp 0.8s ease-out forwards; /* Reuse cool animation */
     border-top: 5px solid var(--bs-primary);
 }
 
-/* Fix the heading color to match your theme */
+/* Fix the heading color to match theme */
 .studentwork-details-page h1 {
    color: var(--bs-dark);
 }
@@ -1153,7 +1184,7 @@ footer p {
 
 .otp-icon {
     font-size: 4rem; /* Large icon */
-    color: var(--bs-primary); /* Your primary pink color */
+    color: var(--bs-primary); /* primary pink color */
     margin-bottom: 1rem;
     animation: bounce 2s infinite ease-in-out; /* Subtle animation */
 }

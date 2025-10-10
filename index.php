@@ -90,7 +90,7 @@
             </div>
         </section>
 
-        <!-- New Infinite Scrolling Product Carousel -->
+        <!-- Infinite Scrolling Product Carousel -->
         <section class="py-5 bg-light">
             <div class="container-fluid">
                 <h2 class="text-center section-title mb-5">Our Signature Bouquets</h2>
@@ -119,6 +119,25 @@
                                 ';
                             }
                         ?>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Google Maps Section -->
+        <section class="py-5">
+            <div class="container" data-aos="fade-up">
+                <h2 class="text-center section-title mb-5"><i class="bi bi-map"></i> Find Us in Kuching!</h2>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="map-responsive shadow-lg rounded-3 overflow-hidden">
+                           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.4461798611496!2d110.35299027515053!3d1.502701798483216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fba7e7dbdd19e9%3A0xcef55dd65e78119!2sRoot%20Flower!5e0!3m2!1sen!2smy!4v1760059180523!5m2!1sen!2smy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <div class="text-center mt-4">
+                            <p class="lead mb-0">Visit us at our studio</p>
+                            <p class="text-muted">Lorong Bdc, 93350 Kuching, Sarawak</p>
+                        </div>
                     </div>
                 </div>
             </div>
