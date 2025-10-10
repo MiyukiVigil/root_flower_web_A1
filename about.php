@@ -64,7 +64,7 @@
 
                     <h5><i class="bi bi-camera-video-fill"></i> Video Presentation</h5>
                     <p>The video presentation showcasing the website's functionalities can be viewed at the link below.</p>
-                    <a href="#" class="btn btn-primary"><i class="bi bi-play-btn-fill me-2"></i>Watch Video (Placeholder Link)</a>
+                    <a href="https://youtu.be/jNE244BIx8A" class="btn btn-primary"><i class="bi bi-play-btn-fill me-2"></i>Watch Video</a>
 
                     <hr class="my-4">
 
