@@ -20,9 +20,6 @@
                         <img src="images/logo.svg" alt="Root Flowers Logo" class="navbar-logo">
                         <span class="brand-logo-text ms-2">Root Flowers</span>
                     </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarRoot" aria-controls="navbarRoot" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
                 </div>
             </nav>
         </header>

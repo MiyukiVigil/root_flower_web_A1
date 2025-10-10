@@ -1199,3 +1199,47 @@ footer p {
         display: none;
     }
 }
+
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background-color: var(--bs-primary); /* Use a solid color for the menu background */
+        position: absolute; /* Take it out of normal flow */
+        top: 100%; /* Position right below the navbar */
+        left: 0;
+        right: 0;
+        padding: 10px 0;
+        border-radius: 0 0 15px 15px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        z-index: 1000; /* Ensure it is above other content */
+    }
+
+    /* Center the nav items inside the collapsed menu */
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    /* Add spacing and full width to nav items */
+    .navbar-nav .nav-item {
+        width: 90%;
+        margin: 5px 0 !important; /* Override inline margin utilities */
+    }
+
+    /* 2. Adjust button style inside the collapsed menu */
+    .navbar-nav .btn-light.rounded-pill {
+        width: 100%;
+        text-align: center;
+        /* Keep the light background, but adjust the border/shadow for mobile */
+        border: 2px solid var(--bs-light); 
+        color: var(--bs-dark); /* Dark text on light button */
+    }
+    
+    /* Ensure the brand text is still visible if the logo is too small */
+    .navbar-brand .brand-logo-text {
+        color: var(--bs-light) !important;
+        /* If you added the smaller screen media query, remove it or adjust this:
+        display: block !important; */
+    }
+}
